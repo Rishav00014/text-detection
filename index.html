@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Text Extractor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Invoice Image</h1>
+        <input type="file" id="invoiceImage" accept="image/*" onchange="previewImage(event)">
+        <canvas id="canvas"></canvas>
+        <button onclick="extractText()">Extract Text</button>
+        <table id="outputTable">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>x0</th>
+                    <th>y0</th>
+                    <th>x1</th>
+                    <th>y1</th>
+                </tr>
+            </thead>
+            <tbody id="outputBody"></tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
